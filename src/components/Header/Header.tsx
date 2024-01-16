@@ -1,7 +1,11 @@
+import HeaderStyled from "./HeaderStyled";
+
 const Header = (): JSX.Element => {
   return (
     <>
-      <img src="/esed.png" alt="logo" width="180" height="80" />
+      <HeaderStyled>
+        <img src="/esed.png" alt="logo" width="200" height="80" />
+      </HeaderStyled>
     </>
   );
 };
