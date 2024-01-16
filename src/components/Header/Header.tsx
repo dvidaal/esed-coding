@@ -4,7 +4,15 @@ const Header = (): JSX.Element => {
   return (
     <>
       <HeaderStyled>
-        <img src="/esed.png" alt="logo" width="200" height="80" />
+        <div className="logo">
+          <img
+            src="/esed.png"
+            alt="logo"
+            width="200"
+            height="80"
+            className="logo"
+          />
+        </div>
       </HeaderStyled>
     </>
   );

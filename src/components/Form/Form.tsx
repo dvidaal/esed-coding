@@ -1,5 +1,65 @@
+import Select from "react-select";
+import { Category } from "../../types/types";
 import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
+
+const categories: Category[] = [
+  { value: "select", label: "Choose the answer" },
+  { value: "HumanResources", label: "Human Resources" },
+  { value: "Finance", label: "Finance" },
+  { value: "Marketing", label: "Marketing" },
+  { value: "Sales", label: "Sales" },
+  { value: "CustomerService", label: "Customer Service" },
+  { value: "IT", label: "Information Technology" },
+  { value: "Operations", label: "Operations" },
+  { value: "Legal", label: "Legal" },
+  { value: "Administration", label: "Administration" },
+  { value: "ResearchAndDevelopment", label: "Research and Development" },
+  { value: "QualityControl", label: "Quality Control" },
+  { value: "SupplyChain", label: "Supply Chain" },
+  { value: "PublicRelations", label: "Public Relations" },
+  { value: "Facilities", label: "Facilities" },
+  { value: "Training", label: "Training" },
+  { value: "HealthAndSafety", label: "Health and Safety" },
+  { value: "ProductManagement", label: "Product Management" },
+  { value: "Engineering", label: "Engineering" },
+  { value: "Design", label: "Design" },
+  { value: "Communication", label: "Communication" },
+  { value: "StrategicPlanning", label: "Strategic Planning" },
+  { value: "ProjectManagement", label: "Project Management" },
+  {
+    value: "EnvironmentalSustainability",
+    label: "Environmental Sustainability",
+  },
+  {
+    value: "CorporateSocialResponsibility",
+    label: "Corporate Social Responsibility",
+  },
+  { value: "InternalAudit", label: "Internal Audit" },
+  { value: "Logistics", label: "Logistics" },
+  { value: "InternationalBusiness", label: "International Business" },
+  { value: "GovernmentRelations", label: "Government Relations" },
+  { value: "CustomerExperience", label: "Customer Experience" },
+  { value: "EmployeeRelations", label: "Employee Relations" },
+  { value: "DiversityAndInclusion", label: "Diversity and Inclusion" },
+  { value: "EthicsAndCompliance", label: "Ethics and Compliance" },
+  { value: "TrainingAndDevelopment", label: "Training and Development" },
+  { value: "CorporateCommunications", label: "Corporate Communications" },
+  { value: "BusinessDevelopment", label: "Business Development" },
+  { value: "Innovation", label: "Innovation" },
+  { value: "Merchandising", label: "Merchandising" },
+  { value: "StrategicPartnerships", label: "Strategic Partnerships" },
+  { value: "CustomerSuccess", label: "Customer Success" },
+  { value: "LegalCompliance", label: "Legal Compliance" },
+  { value: "InformationSecurity", label: "Information Security" },
+  { value: "CorporateStrategy", label: "Corporate Strategy" },
+  { value: "FinanceAndAccounting", label: "Finance and Accounting" },
+  { value: "TalentAcquisition", label: "Talent Acquisition" },
+  { value: "BusinessAnalysis", label: "Business Analysis" },
+  { value: "CorporateDevelopment", label: "Corporate Development" },
+  { value: "DataAnalytics", label: "Data Analytics" },
+  { value: "CustomerAnalytics", label: "Customer Analytics" },
+];
 
 const Form = (): JSX.Element => {
   return (
@@ -17,67 +77,11 @@ const Form = (): JSX.Element => {
         </select>
         <label>Category *</label>
         <p>To which department would you like to send the form?</p>
-        <select name="category" id="categories">
-          <option value="select">Choose the answer</option>
-          <option value="HumanResources">Human Resources</option>
-          <option value="Finance">Finance</option>
-          <option value="Marketing">Marketing</option>
-          <option value="Sales">Sales</option>
-          <option value="CustomerService">Customer Service</option>
-          <option value="IT">Information Technology</option>
-          <option value="Operations">Operations</option>
-          <option value="Legal">Legal</option>
-          <option value="Administration">Administration</option>
-          <option value="ResearchAndDevelopment">
-            Research and Development
-          </option>
-          <option value="QualityControl">Quality Control</option>
-          <option value="SupplyChain">Supply Chain</option>
-          <option value="PublicRelations">Public Relations</option>
-          <option value="Facilities">Facilities</option>
-          <option value="Training">Training</option>
-          <option value="HealthAndSafety">Health and Safety</option>
-          <option value="ProductManagement">Product Management</option>
-          <option value="Engineering">Engineering</option>
-          <option value="Design">Design</option>
-          <option value="Communication">Communication</option>
-          <option value="StrategicPlanning">Strategic Planning</option>
-          <option value="ProjectManagement">Project Management</option>
-          <option value="EnvironmentalSustainability">
-            Environmental Sustainability
-          </option>
-          <option value="CorporateSocialResponsibility">
-            Corporate Social Responsibility
-          </option>
-          <option value="InternalAudit">Internal Audit</option>
-          <option value="Logistics">Logistics</option>
-          <option value="InternationalBusiness">International Business</option>
-          <option value="GovernmentRelations">Government Relations</option>
-          <option value="CustomerExperience">Customer Experience</option>
-          <option value="EmployeeRelations">Employee Relations</option>
-          <option value="DiversityAndInclusion">Diversity and Inclusion</option>
-          <option value="EthicsAndCompliance">Ethics and Compliance</option>
-          <option value="TrainingAndDevelopment">
-            Training and Development
-          </option>
-          <option value="CorporateCommunications">
-            Corporate Communications
-          </option>
-          <option value="BusinessDevelopment">Business Development</option>
-          <option value="Innovation">Innovation</option>
-          <option value="Merchandising">Merchandising</option>
-          <option value="StrategicPartnerships">Strategic Partnerships</option>
-          <option value="CustomerSuccess">Customer Success</option>
-          <option value="LegalCompliance">Legal Compliance</option>
-          <option value="InformationSecurity">Information Security</option>
-          <option value="CorporateStrategy">Corporate Strategy</option>
-          <option value="FinanceAndAccounting">Finance and Accounting</option>
-          <option value="TalentAcquisition">Talent Acquisition</option>
-          <option value="BusinessAnalysis">Business Analysis</option>
-          <option value="CorporateDevelopment">Corporate Development</option>
-          <option value="DataAnalytics">Data Analytics</option>
-          <option value="CustomerAnalytics">Customer Analytics</option>
-        </select>
+        <Select
+          options={categories}
+          className="categories"
+          placeholder="Choose the answer"
+        />
         <div className="button-container">
           <Button text="Next" />
         </div>
