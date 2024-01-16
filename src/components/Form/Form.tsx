@@ -1,4 +1,5 @@
 import Select from "react-select";
+import { CSSObjectWithLabel } from "react-select";
 import { Category } from "../../types/types";
 import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
@@ -88,12 +89,12 @@ const Form = (): JSX.Element => {
   };
 
   const customStyles = {
-    control: (baseStyles) => ({
+    control: (baseStyles: CSSObjectWithLabel) => ({
       ...baseStyles,
       backgroundColor: "#e7e4e4",
       fontSize: "0.8rem",
     }),
-    placeholder: (baseStyles) => ({
+    placeholder: (baseStyles: CSSObjectWithLabel) => ({
       ...baseStyles,
       color: "#000",
     }),
@@ -120,7 +121,7 @@ const Form = (): JSX.Element => {
           onChange={handleInputChange}
         />
         <label>Type *</label>
-        <p>Would you like to give us Feedback, Question or Complain?</p>
+        <p>Would you like to give us Feedback, Question, or Complain?</p>
         <select
           name="type"
           id="feedback"
