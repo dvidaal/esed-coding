@@ -10,17 +10,32 @@ const FormStyled = styled.form`
     font-weight: 800;
   }
 
-  input,
+  input {
+    margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 2px;
+    background-color: #e7e4e4;
+    border: 0px;
+  }
+
   select {
     margin-bottom: 16px;
     padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border-radius: 2px;
+    border: 0px;
+    background-color: #e7e4e4;
+    color: #000;
   }
 
   p {
     margin: 0;
+    font-size: 0.8rem;
+    color: #454444;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: end;
   }
 `;
 
