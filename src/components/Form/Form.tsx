@@ -102,6 +102,15 @@ const Form = (): JSX.Element => {
   return (
     <>
       <FormStyled>
+        <div className="logo">
+          <img
+            src="/esed.png"
+            alt="logo"
+            width="200"
+            height="80"
+            className="logo"
+          />
+        </div>
         <label>Your Email Address *</label>
         <input
           type="email"

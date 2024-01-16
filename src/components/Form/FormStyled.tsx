@@ -4,7 +4,6 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  max-width: 460px;
 
   label {
     font-weight: 800;
@@ -42,6 +41,12 @@ const FormStyled = styled.form`
   .categories {
     margin-bottom: 30px;
     background-color: #e7e4e4;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
   }
 `;
 
