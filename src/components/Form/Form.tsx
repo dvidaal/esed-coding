@@ -88,13 +88,13 @@ const Form = (): JSX.Element => {
   };
 
   const customStyles = {
-    control: (baseStyles) => ({
-      ...baseStyles,
+    control: (provided: React.CSSProperties) => ({
+      ...provided,
       backgroundColor: "#e7e4e4",
       fontSize: "0.8rem",
     }),
-    placeholder: (baseStyles) => ({
-      ...baseStyles,
+    placeholder: (provided: React.CSSProperties) => ({
+      ...provided,
       color: "#000",
     }),
   };
@@ -120,7 +120,7 @@ const Form = (): JSX.Element => {
           onChange={handleInputChange}
         />
         <label>Type *</label>
-        <p>Would you like to give us Feedback, Question or Complain?</p>
+        <p>Would you like to give us Feedback, Question, or Complain?</p>
         <select
           name="type"
           id="feedback"
