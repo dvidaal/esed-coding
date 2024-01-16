@@ -16,6 +16,7 @@ const FormStyled = styled.form`
     border-radius: 2px;
     background-color: #e7e4e4;
     border: 0px;
+    color: #000;
   }
 
   select {
@@ -36,6 +37,11 @@ const FormStyled = styled.form`
   .button-container {
     display: flex;
     justify-content: end;
+  }
+
+  .categories {
+    margin-bottom: 30px;
+    background-color: #e7e4e4;
   }
 `;
 
