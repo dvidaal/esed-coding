@@ -8,7 +8,7 @@ box-sizing: border-box;
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Work Sans', sans serif;
+  font-family: "Roboto", 'Work Sans', sans serif;
   min-height: 100vh;
   background-color: #fff;
 }
