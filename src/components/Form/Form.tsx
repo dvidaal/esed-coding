@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
 
 const Form = (): JSX.Element => {
@@ -77,6 +78,9 @@ const Form = (): JSX.Element => {
           <option value="DataAnalytics">Data Analytics</option>
           <option value="CustomerAnalytics">Customer Analytics</option>
         </select>
+        <div className="button-container">
+          <Button text="Next" />
+        </div>
       </FormStyled>
     </>
   );
