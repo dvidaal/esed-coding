@@ -2,6 +2,7 @@ import Select from "react-select";
 import { Category } from "../../types/types";
 import Button from "../Button/Button";
 import FormStyled from "./FormStyled";
+import { useState } from "react";
 
 const categories: Category[] = [
   { value: "select", label: "Choose the answer" },
@@ -62,14 +63,61 @@ const categories: Category[] = [
 ];
 
 const Form = (): JSX.Element => {
+  const [input, setInput] = useState({
+    email: "",
+    type: "select",
+    category: null as Category | null,
+  });
+
+  const isDisabled = !input.email || input.type === "select" || !input.category;
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleCategoryChange = (selectedOption: Category | null) => {
+    setInput({
+      ...input,
+      category: selectedOption,
+    });
+  };
+
+  const customStyles = {
+    control: (baseStyles) => ({
+      ...baseStyles,
+      backgroundColor: "#e7e4e4",
+      fontSize: "0.8rem",
+    }),
+    placeholder: (baseStyles) => ({
+      ...baseStyles,
+      color: "#000",
+    }),
+  };
+
   return (
     <>
       <FormStyled>
         <label>Your Email Address *</label>
-        <input type="email" name="email" id="userEmail" />
+        <input
+          type="email"
+          name="email"
+          id="userEmail"
+          value={input.email}
+          onChange={handleInputChange}
+        />
         <label>Type *</label>
         <p>Would you like to give us Feedback, Question or Complain?</p>
-        <select name="type" id="feedback">
+        <select
+          name="type"
+          id="feedback"
+          value={input.type}
+          onChange={handleInputChange}
+        >
           <option value="select">Choose the answer</option>
           <option value="Feedback">Feedback</option>
           <option value="Question">Question</option>
@@ -81,9 +129,12 @@ const Form = (): JSX.Element => {
           options={categories}
           className="categories"
           placeholder="Choose the answer"
+          value={input.category}
+          onChange={handleCategoryChange}
+          styles={customStyles}
         />
         <div className="button-container">
-          <Button text="Next" />
+          <Button text="Next" isDisabled={isDisabled} />
         </div>
       </FormStyled>
     </>
