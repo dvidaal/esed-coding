@@ -1,4 +1,5 @@
 import Select from "react-select";
+import React from "react";
 import { CSSObjectWithLabel } from "react-select";
 import { Category } from "../../types/types";
 import Button from "../Button/Button";
